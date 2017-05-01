@@ -178,7 +178,7 @@ rides[:24*10].plot(x='dteday', y='cnt')
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x19a105cb1d0>
+    <matplotlib.axes._subplots.AxesSubplot at 0x205bf795048>
 
 
 
@@ -587,20 +587,6 @@ suite = unittest.TestLoader().loadTestsFromModule(TestMethods())
 unittest.TextTestRunner().run(suite)
 ```
 
-    .....
-    ----------------------------------------------------------------------
-    Ran 5 tests in 0.039s
-    
-    OK
-    
-
-
-
-
-    <unittest.runner.TextTestResult run=5 errors=0 failures=0>
-
-
-
 ## Training the network
 
 Here you'll set the hyperparameters for the network. The strategy here is to find hyperparameters such that the error on the training set is low, but you're not overfitting to the data. If you train the network too long or have too many hidden nodes, it can become overly specific to the training set and will fail to generalize to the validation set. That is, the loss on the validation set will start increasing as the training set loss drops.
@@ -621,9 +607,9 @@ The more hidden nodes you have, the more accurate predictions the model will mak
 import sys
 
 ### Set the hyperparameters here ###
-iterations = 16000
-learning_rate = 0.16
-hidden_nodes = 6
+iterations = 1500
+learning_rate = 0.1
+hidden_nodes = 12
 output_nodes = 1
 
 N_i = train_features.shape[1]
@@ -649,7 +635,7 @@ for ii in range(iterations):
     losses['validation'].append(val_loss)
 ```
 
-    Progress: 100.0% ... Training loss: 0.063 ... Validation loss: 0.153
+    Progress: 99.9% ... Training loss: 0.290 ... Validation loss: 0.455
 
 
 ```python
